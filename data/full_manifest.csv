@@ -1,0 +1,109 @@
+﻿sample_id,task_id,domain,model,condition
+BZ01__FULL__open_weight_qwen_main,BZ01,business,Qwen3-8B (ollama),FULL
+BZ01__PUB-ABSENT__open_weight_qwen_main,BZ01,business,Qwen3-8B (ollama),PUB-ABSENT
+BZ01__PRIV-ABSENT__open_weight_qwen_main,BZ01,business,Qwen3-8B (ollama),PRIV-ABSENT
+BZ01__FULL__commercial_cn_deepseek,BZ01,business,DeepSeek-chat,FULL
+BZ01__PUB-ABSENT__commercial_cn_deepseek,BZ01,business,DeepSeek-chat,PUB-ABSENT
+BZ01__PRIV-ABSENT__commercial_cn_deepseek,BZ01,business,DeepSeek-chat,PRIV-ABSENT
+BZ01__FULL__closed_global_strong,BZ01,business,GPT-4o (laozhang.ai),FULL
+BZ01__PUB-ABSENT__closed_global_strong,BZ01,business,GPT-4o (laozhang.ai),PUB-ABSENT
+BZ01__PRIV-ABSENT__closed_global_strong,BZ01,business,GPT-4o (laozhang.ai),PRIV-ABSENT
+BZ02__FULL__open_weight_qwen_main,BZ02,business,Qwen3-8B (ollama),FULL
+BZ02__PUB-ABSENT__open_weight_qwen_main,BZ02,business,Qwen3-8B (ollama),PUB-ABSENT
+BZ02__PRIV-ABSENT__open_weight_qwen_main,BZ02,business,Qwen3-8B (ollama),PRIV-ABSENT
+BZ02__FULL__commercial_cn_deepseek,BZ02,business,DeepSeek-chat,FULL
+BZ02__PUB-ABSENT__commercial_cn_deepseek,BZ02,business,DeepSeek-chat,PUB-ABSENT
+BZ02__PRIV-ABSENT__commercial_cn_deepseek,BZ02,business,DeepSeek-chat,PRIV-ABSENT
+BZ02__FULL__closed_global_strong,BZ02,business,GPT-4o (laozhang.ai),FULL
+BZ02__PUB-ABSENT__closed_global_strong,BZ02,business,GPT-4o (laozhang.ai),PUB-ABSENT
+BZ02__PRIV-ABSENT__closed_global_strong,BZ02,business,GPT-4o (laozhang.ai),PRIV-ABSENT
+BZ05__FULL__open_weight_qwen_main,BZ05,business,Qwen3-8B (ollama),FULL
+BZ05__PUB-ABSENT__open_weight_qwen_main,BZ05,business,Qwen3-8B (ollama),PUB-ABSENT
+BZ05__PRIV-ABSENT__open_weight_qwen_main,BZ05,business,Qwen3-8B (ollama),PRIV-ABSENT
+BZ05__FULL__commercial_cn_deepseek,BZ05,business,DeepSeek-chat,FULL
+BZ05__PUB-ABSENT__commercial_cn_deepseek,BZ05,business,DeepSeek-chat,PUB-ABSENT
+BZ05__PRIV-ABSENT__commercial_cn_deepseek,BZ05,business,DeepSeek-chat,PRIV-ABSENT
+BZ05__FULL__closed_global_strong,BZ05,business,GPT-4o (laozhang.ai),FULL
+BZ05__PUB-ABSENT__closed_global_strong,BZ05,business,GPT-4o (laozhang.ai),PUB-ABSENT
+BZ05__PRIV-ABSENT__closed_global_strong,BZ05,business,GPT-4o (laozhang.ai),PRIV-ABSENT
+BZ09__FULL__open_weight_qwen_main,BZ09,business,Qwen3-8B (ollama),FULL
+BZ09__PUB-ABSENT__open_weight_qwen_main,BZ09,business,Qwen3-8B (ollama),PUB-ABSENT
+BZ09__PRIV-ABSENT__open_weight_qwen_main,BZ09,business,Qwen3-8B (ollama),PRIV-ABSENT
+BZ09__FULL__commercial_cn_deepseek,BZ09,business,DeepSeek-chat,FULL
+BZ09__PUB-ABSENT__commercial_cn_deepseek,BZ09,business,DeepSeek-chat,PUB-ABSENT
+BZ09__PRIV-ABSENT__commercial_cn_deepseek,BZ09,business,DeepSeek-chat,PRIV-ABSENT
+BZ09__FULL__closed_global_strong,BZ09,business,GPT-4o (laozhang.ai),FULL
+BZ09__PUB-ABSENT__closed_global_strong,BZ09,business,GPT-4o (laozhang.ai),PUB-ABSENT
+BZ09__PRIV-ABSENT__closed_global_strong,BZ09,business,GPT-4o (laozhang.ai),PRIV-ABSENT
+TC01__FULL__open_weight_qwen_main,TC01,technical,Qwen3-8B (ollama),FULL
+TC01__PUB-ABSENT__open_weight_qwen_main,TC01,technical,Qwen3-8B (ollama),PUB-ABSENT
+TC01__PRIV-ABSENT__open_weight_qwen_main,TC01,technical,Qwen3-8B (ollama),PRIV-ABSENT
+TC01__FULL__commercial_cn_deepseek,TC01,technical,DeepSeek-chat,FULL
+TC01__PUB-ABSENT__commercial_cn_deepseek,TC01,technical,DeepSeek-chat,PUB-ABSENT
+TC01__PRIV-ABSENT__commercial_cn_deepseek,TC01,technical,DeepSeek-chat,PRIV-ABSENT
+TC01__FULL__closed_global_strong,TC01,technical,GPT-4o (laozhang.ai),FULL
+TC01__PUB-ABSENT__closed_global_strong,TC01,technical,GPT-4o (laozhang.ai),PUB-ABSENT
+TC01__PRIV-ABSENT__closed_global_strong,TC01,technical,GPT-4o (laozhang.ai),PRIV-ABSENT
+TC02__FULL__open_weight_qwen_main,TC02,technical,Qwen3-8B (ollama),FULL
+TC02__PUB-ABSENT__open_weight_qwen_main,TC02,technical,Qwen3-8B (ollama),PUB-ABSENT
+TC02__PRIV-ABSENT__open_weight_qwen_main,TC02,technical,Qwen3-8B (ollama),PRIV-ABSENT
+TC02__FULL__commercial_cn_deepseek,TC02,technical,DeepSeek-chat,FULL
+TC02__PUB-ABSENT__commercial_cn_deepseek,TC02,technical,DeepSeek-chat,PUB-ABSENT
+TC02__PRIV-ABSENT__commercial_cn_deepseek,TC02,technical,DeepSeek-chat,PRIV-ABSENT
+TC02__FULL__closed_global_strong,TC02,technical,GPT-4o (laozhang.ai),FULL
+TC02__PUB-ABSENT__closed_global_strong,TC02,technical,GPT-4o (laozhang.ai),PUB-ABSENT
+TC02__PRIV-ABSENT__closed_global_strong,TC02,technical,GPT-4o (laozhang.ai),PRIV-ABSENT
+TC08__FULL__open_weight_qwen_main,TC08,technical,Qwen3-8B (ollama),FULL
+TC08__PUB-ABSENT__open_weight_qwen_main,TC08,technical,Qwen3-8B (ollama),PUB-ABSENT
+TC08__PRIV-ABSENT__open_weight_qwen_main,TC08,technical,Qwen3-8B (ollama),PRIV-ABSENT
+TC08__FULL__commercial_cn_deepseek,TC08,technical,DeepSeek-chat,FULL
+TC08__PUB-ABSENT__commercial_cn_deepseek,TC08,technical,DeepSeek-chat,PUB-ABSENT
+TC08__PRIV-ABSENT__commercial_cn_deepseek,TC08,technical,DeepSeek-chat,PRIV-ABSENT
+TC08__FULL__closed_global_strong,TC08,technical,GPT-4o (laozhang.ai),FULL
+TC08__PUB-ABSENT__closed_global_strong,TC08,technical,GPT-4o (laozhang.ai),PUB-ABSENT
+TC08__PRIV-ABSENT__closed_global_strong,TC08,technical,GPT-4o (laozhang.ai),PRIV-ABSENT
+TC10__FULL__open_weight_qwen_main,TC10,technical,Qwen3-8B (ollama),FULL
+TC10__PUB-ABSENT__open_weight_qwen_main,TC10,technical,Qwen3-8B (ollama),PUB-ABSENT
+TC10__PRIV-ABSENT__open_weight_qwen_main,TC10,technical,Qwen3-8B (ollama),PRIV-ABSENT
+TC10__FULL__commercial_cn_deepseek,TC10,technical,DeepSeek-chat,FULL
+TC10__PUB-ABSENT__commercial_cn_deepseek,TC10,technical,DeepSeek-chat,PUB-ABSENT
+TC10__PRIV-ABSENT__commercial_cn_deepseek,TC10,technical,DeepSeek-chat,PRIV-ABSENT
+TC10__FULL__closed_global_strong,TC10,technical,GPT-4o (laozhang.ai),FULL
+TC10__PUB-ABSENT__closed_global_strong,TC10,technical,GPT-4o (laozhang.ai),PUB-ABSENT
+TC10__PRIV-ABSENT__closed_global_strong,TC10,technical,GPT-4o (laozhang.ai),PRIV-ABSENT
+TR01__FULL__open_weight_qwen_main,TR01,travel,Qwen3-8B (ollama),FULL
+TR01__PUB-ABSENT__open_weight_qwen_main,TR01,travel,Qwen3-8B (ollama),PUB-ABSENT
+TR01__PRIV-ABSENT__open_weight_qwen_main,TR01,travel,Qwen3-8B (ollama),PRIV-ABSENT
+TR01__FULL__commercial_cn_deepseek,TR01,travel,DeepSeek-chat,FULL
+TR01__PUB-ABSENT__commercial_cn_deepseek,TR01,travel,DeepSeek-chat,PUB-ABSENT
+TR01__PRIV-ABSENT__commercial_cn_deepseek,TR01,travel,DeepSeek-chat,PRIV-ABSENT
+TR01__FULL__closed_global_strong,TR01,travel,GPT-4o (laozhang.ai),FULL
+TR01__PUB-ABSENT__closed_global_strong,TR01,travel,GPT-4o (laozhang.ai),PUB-ABSENT
+TR01__PRIV-ABSENT__closed_global_strong,TR01,travel,GPT-4o (laozhang.ai),PRIV-ABSENT
+TR02__FULL__open_weight_qwen_main,TR02,travel,Qwen3-8B (ollama),FULL
+TR02__PUB-ABSENT__open_weight_qwen_main,TR02,travel,Qwen3-8B (ollama),PUB-ABSENT
+TR02__PRIV-ABSENT__open_weight_qwen_main,TR02,travel,Qwen3-8B (ollama),PRIV-ABSENT
+TR02__FULL__commercial_cn_deepseek,TR02,travel,DeepSeek-chat,FULL
+TR02__PUB-ABSENT__commercial_cn_deepseek,TR02,travel,DeepSeek-chat,PUB-ABSENT
+TR02__PRIV-ABSENT__commercial_cn_deepseek,TR02,travel,DeepSeek-chat,PRIV-ABSENT
+TR02__FULL__closed_global_strong,TR02,travel,GPT-4o (laozhang.ai),FULL
+TR02__PUB-ABSENT__closed_global_strong,TR02,travel,GPT-4o (laozhang.ai),PUB-ABSENT
+TR02__PRIV-ABSENT__closed_global_strong,TR02,travel,GPT-4o (laozhang.ai),PRIV-ABSENT
+TR05__FULL__open_weight_qwen_main,TR05,travel,Qwen3-8B (ollama),FULL
+TR05__PUB-ABSENT__open_weight_qwen_main,TR05,travel,Qwen3-8B (ollama),PUB-ABSENT
+TR05__PRIV-ABSENT__open_weight_qwen_main,TR05,travel,Qwen3-8B (ollama),PRIV-ABSENT
+TR05__FULL__commercial_cn_deepseek,TR05,travel,DeepSeek-chat,FULL
+TR05__PUB-ABSENT__commercial_cn_deepseek,TR05,travel,DeepSeek-chat,PUB-ABSENT
+TR05__PRIV-ABSENT__commercial_cn_deepseek,TR05,travel,DeepSeek-chat,PRIV-ABSENT
+TR05__FULL__closed_global_strong,TR05,travel,GPT-4o (laozhang.ai),FULL
+TR05__PUB-ABSENT__closed_global_strong,TR05,travel,GPT-4o (laozhang.ai),PUB-ABSENT
+TR05__PRIV-ABSENT__closed_global_strong,TR05,travel,GPT-4o (laozhang.ai),PRIV-ABSENT
+TR08__FULL__open_weight_qwen_main,TR08,travel,Qwen3-8B (ollama),FULL
+TR08__PUB-ABSENT__open_weight_qwen_main,TR08,travel,Qwen3-8B (ollama),PUB-ABSENT
+TR08__PRIV-ABSENT__open_weight_qwen_main,TR08,travel,Qwen3-8B (ollama),PRIV-ABSENT
+TR08__FULL__commercial_cn_deepseek,TR08,travel,DeepSeek-chat,FULL
+TR08__PUB-ABSENT__commercial_cn_deepseek,TR08,travel,DeepSeek-chat,PUB-ABSENT
+TR08__PRIV-ABSENT__commercial_cn_deepseek,TR08,travel,DeepSeek-chat,PRIV-ABSENT
+TR08__FULL__closed_global_strong,TR08,travel,GPT-4o (laozhang.ai),FULL
+TR08__PUB-ABSENT__closed_global_strong,TR08,travel,GPT-4o (laozhang.ai),PUB-ABSENT
+TR08__PRIV-ABSENT__closed_global_strong,TR08,travel,GPT-4o (laozhang.ai),PRIV-ABSENT

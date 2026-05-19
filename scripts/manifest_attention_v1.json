@@ -1,0 +1,282 @@
+{
+  "manifest_version": "v1",
+  "created": "2026-05-10",
+  "frozen": false,
+  "description": "IST × Self-Attention 机制验证实验 - 任务与条件清单（更新版，含决策2/3硬决策）",
+  "base_paths": {
+    "travel_prompts": "experiments/data/ist_weighting/prompts",
+    "biz_tech_prompts": "experiments/data/ist_weighting_v3_clean/prompts",
+    "output_dir": "paperSELFatten/ist_attention_v1"
+  },
+  "dimension_labels": {
+    "WHAT": "任务目标 (What)",
+    "WHY": "执行原因 (Why)",
+    "WHO": "执行角色 (Who)",
+    "WHEN": "时间安排 (When)",
+    "WHERE": "执行场所 (Where)",
+    "HOW_TO_DO": "执行方法 (How to do)",
+    "HOW_MUCH": "量化要素 (How much)",
+    "HOW_FEEL": "预期效果 (How feel)"
+  },
+  "tasks": [
+    {
+      "task_id": "TR01",
+      "domain": "travel",
+      "task_name": "惠州两日游攻略",
+      "source_dataset": "ist_weighting_v1",
+      "full_prompt_file": "experiments/data/ist_weighting/prompts/TR01_full.txt",
+      "pub_absent": {
+        "dimension": "HOW_TO_DO",
+        "rationale": "方法步骤高模板化，模型可从任务类型先验补偿"
+      },
+      "priv_absent": {
+        "dimension": "HOW_MUCH",
+        "rationale": "TR01无强WHO约束，预算/规模是此任务最强private信息",
+        "leakage_keywords": ["1000", "2000", "300", "400", "500", "600", "200", "100", "预算", "元/人", "两天一夜", "2-4人"]
+      },
+      "micro_clean_required": false,
+      "micro_clean_notes": "",
+      "case_study_role": "none",
+      "audit_status": "pending"
+    },
+    {
+      "task_id": "TR02",
+      "domain": "travel",
+      "task_name": "成都五日游（一家三口）",
+      "source_dataset": "ist_weighting_v1",
+      "full_prompt_file": "experiments/data/ist_weighting/prompts/TR02_full.txt",
+      "pub_absent": {
+        "dimension": "HOW_TO_DO",
+        "rationale": "旅行预订流程高度标准化，典型public维度"
+      },
+      "priv_absent": {
+        "dimension": "WHO",
+        "rationale": "'一家三口'是高度私有的对象约束，缺失后对象漂移直观",
+        "leakage_keywords": ["一家三口"],
+        "known_leakage_in": ["WHAT"]
+      },
+      "micro_clean_required": true,
+      "micro_clean_notes": "WHAT中'为一家三口规划'需改为'规划一次成都五日游方案'，删除对象描述符",
+      "micro_clean_target": {
+        "dimension": "WHAT",
+        "before": "为一家三口规划一次成都五日游方案。",
+        "after": "规划一次成都五日游方案。"
+      },
+      "case_study_role": "private_collapse_primary",
+      "audit_status": "pending"
+    },
+    {
+      "task_id": "TR05",
+      "domain": "travel",
+      "task_name": "张家界三日游（退休老人）",
+      "source_dataset": "ist_weighting_v1",
+      "full_prompt_file": "experiments/data/ist_weighting/prompts/TR05_full.txt",
+      "pub_absent": {
+        "dimension": "HOW_TO_DO",
+        "rationale": "逐日行程安排模板化程度高"
+      },
+      "priv_absent": {
+        "dimension": "WHO",
+        "rationale": "'退休老人'决定了节奏、安全性等全局约束，private强度高",
+        "leakage_keywords": ["退休老人", "老年人", "老人"],
+        "known_leakage_in": ["WHAT"]
+      },
+      "micro_clean_required": true,
+      "micro_clean_notes": "WHAT中'为退休老人推荐'需改为'推荐一条张家界三日游行程'",
+      "micro_clean_target": {
+        "dimension": "WHAT",
+        "before": "为退休老人推荐一条张家界三日游行程。",
+        "after": "推荐一条张家界三日游行程。"
+      },
+      "case_study_role": "private_collapse_secondary",
+      "audit_status": "pending"
+    },
+    {
+      "task_id": "TR08",
+      "domain": "travel",
+      "task_name": "三亚蜜月旅行",
+      "source_dataset": "ist_weighting_v1",
+      "full_prompt_file": "experiments/data/ist_weighting/prompts/TR08_full.txt",
+      "pub_absent": {
+        "dimension": "HOW_TO_DO",
+        "rationale": "旅行准备与预订流程属于标准模板"
+      },
+      "priv_absent": {
+        "dimension": "WHO",
+        "rationale": "'蜜月/新婚夫妇'是高度私有场景，决定整体基调与活动类型",
+        "leakage_keywords": ["蜜月", "新婚", "新人", "浪漫", "二人世界"],
+        "known_leakage_in": ["WHAT", "WHY"]
+      },
+      "micro_clean_required": true,
+      "micro_clean_notes": "WHAT中'为蜜月旅行推荐'需改为'推荐三亚海岛游方案'；WHY中若有蜜月相关表述需同步删除",
+      "micro_clean_target": {
+        "dimension": "WHAT",
+        "before": "为蜜月旅行推荐三亚海岛游方案。",
+        "after": "推荐三亚海岛游方案。"
+      },
+      "case_study_role": "private_collapse_secondary",
+      "audit_status": "pending"
+    },
+    {
+      "task_id": "BZ01",
+      "domain": "business",
+      "task_name": "新能源汽车竞争格局分析",
+      "source_dataset": "ist_weighting_v3_clean",
+      "full_prompt_file": "experiments/data/ist_weighting_v3_clean/prompts/BZ01_full.txt",
+      "pub_absent": {
+        "dimension": "HOW_TO_DO",
+        "rationale": "SWOT+五力模型属于通用分析框架，高模板性"
+      },
+      "priv_absent": {
+        "dimension": "HOW_MUCH",
+        "rationale": "'预算50万/团队6人'限定了研究规模，是此任务强private约束",
+        "leakage_keywords": ["50万", "6人", "预算", "团队"]
+      },
+      "micro_clean_required": false,
+      "micro_clean_notes": "",
+      "case_study_role": "none",
+      "audit_status": "pending"
+    },
+    {
+      "task_id": "BZ02",
+      "domain": "business",
+      "task_name": "AI应用落地规划（中型制造企业）",
+      "source_dataset": "ist_weighting_v3_clean",
+      "full_prompt_file": "experiments/data/ist_weighting_v3_clean/prompts/BZ02_full.txt",
+      "pub_absent": {
+        "dimension": "HOW_TO_DO",
+        "rationale": "敏捷迭代的需求分析→设计→部署流程属于通用AI项目方法论"
+      },
+      "priv_absent": {
+        "dimension": "WHO",
+        "rationale": "'中型制造企业'决定了场景、规模与落地方向，private强度高",
+        "leakage_keywords": ["中型制造企业", "制造业", "生产线", "工厂", "车间"]
+      },
+      "micro_clean_required": false,
+      "micro_clean_notes": "WHAT中仅说'制定AI应用落地规划'，无WHO残留，预计通过",
+      "case_study_role": "none",
+      "audit_status": "pending"
+    },
+    {
+      "task_id": "BZ05",
+      "domain": "business",
+      "task_name": "客户成功体系设计（初创SaaS）",
+      "source_dataset": "ist_weighting_v3_clean",
+      "full_prompt_file": "experiments/data/ist_weighting_v3_clean/prompts/BZ05_full.txt",
+      "pub_absent": {
+        "dimension": "HOW_TO_DO",
+        "rationale": "客户细分→指标→培训→沟通机制属于标准CS方法论"
+      },
+      "priv_absent": {
+        "dimension": "HOW_MUCH",
+        "rationale": "决策：WHO('初创SaaS公司')对象偏泛；'预算50万/团队8人'为更强private约束",
+        "leakage_keywords": ["50万", "8人", "预算"]
+      },
+      "micro_clean_required": false,
+      "micro_clean_notes": "",
+      "case_study_role": "none",
+      "audit_status": "pending"
+    },
+    {
+      "task_id": "BZ09",
+      "domain": "business",
+      "task_name": "医疗AI商业计划书摘要（面向投资人）",
+      "source_dataset": "ist_weighting_v3_clean",
+      "full_prompt_file": "experiments/data/ist_weighting_v3_clean/prompts/BZ09_full.txt",
+      "pub_absent": {
+        "dimension": "HOW_TO_DO",
+        "rationale": "市场调研→竞品→财务预测是商业计划书通用框架"
+      },
+      "priv_absent": {
+        "dimension": "WHO",
+        "rationale": "'投资人'作为受众决定了整个文档的立场、论证重点与语气",
+        "leakage_keywords": ["投资人", "投资者", "融资"]
+      },
+      "micro_clean_required": false,
+      "micro_clean_notes": "WHAT中'写一份医疗AI项目商业计划书摘要'未包含WHO，预计通过",
+      "case_study_role": "private_collapse_primary",
+      "audit_status": "pending"
+    },
+    {
+      "task_id": "TC01",
+      "domain": "technical",
+      "task_name": "Python后端服务Kubernetes部署手册",
+      "source_dataset": "ist_weighting_v3_clean",
+      "full_prompt_file": "experiments/data/ist_weighting_v3_clean/prompts/TC01_full.txt",
+      "pub_absent": {
+        "dimension": "HOW_TO_DO",
+        "rationale": "Dockerfile→K8s YAML→部署→监控是标准K8s部署流程，模板性极强"
+      },
+      "priv_absent": {
+        "dimension": "HOW_MUCH",
+        "rationale": "'预算5万/团队5人'是此任务的量化私有约束",
+        "leakage_keywords": ["5万", "5人", "预算"]
+      },
+      "micro_clean_required": false,
+      "micro_clean_notes": "",
+      "case_study_role": "none",
+      "audit_status": "pending"
+    },
+    {
+      "task_id": "TC02",
+      "domain": "technical",
+      "task_name": "RAG系统解释（面向研究人员/开发者）",
+      "source_dataset": "ist_weighting_v3_clean",
+      "full_prompt_file": "experiments/data/ist_weighting_v3_clean/prompts/TC02_full.txt",
+      "pub_absent": {
+        "dimension": "HOW_TO_DO",
+        "rationale": "检索→融合→优化的RAG说明结构属于通用技术文档框架"
+      },
+      "priv_absent": {
+        "dimension": "WHO",
+        "rationale": "受众从'研究人员/开发者/高级用户'到泛化后，深度与术语使用会明显漂移",
+        "leakage_keywords": ["人工智能研究人员", "软件开发人员", "数据科学家", "高级用户", "研究人员", "开发人员"]
+      },
+      "micro_clean_required": false,
+      "micro_clean_notes": "WHAT中'解释RAG系统'未包含具体受众，预计通过",
+      "case_study_role": "none",
+      "audit_status": "pending"
+    },
+    {
+      "task_id": "TC08",
+      "domain": "technical",
+      "task_name": "CI/CD流水线介绍",
+      "source_dataset": "ist_weighting_v3_clean",
+      "full_prompt_file": "experiments/data/ist_weighting_v3_clean/prompts/TC08_full.txt",
+      "pub_absent": {
+        "dimension": "HOW_TO_DO",
+        "rationale": "设计→构建→测试→部署→GitHub Actions工作流是CI/CD标准教程结构"
+      },
+      "priv_absent": {
+        "dimension": "HOW_MUCH",
+        "rationale": "决策：WHO('软件开发人员/DevOps工程师')偏泛；计费模式'每月50-500美元'是更强的量化约束",
+        "leakage_keywords": ["50", "500", "美元", "每月", "免费", "私有项目", "开源项目"]
+      },
+      "micro_clean_required": false,
+      "micro_clean_notes": "",
+      "case_study_role": "none",
+      "audit_status": "pending"
+    },
+    {
+      "task_id": "TC10",
+      "domain": "technical",
+      "task_name": "Transformer注意力机制解释",
+      "source_dataset": "ist_weighting_v3_clean",
+      "full_prompt_file": "experiments/data/ist_weighting_v3_clean/prompts/TC10_full.txt",
+      "pub_absent": {
+        "dimension": "HOW_TO_DO",
+        "rationale": "架构→自注意力→多头→案例→代码的解释路径高度标准化，适合展示public补偿",
+        "case_study_note": "TC10的HOW_TO_DO缺失是好的public_compensation样本：删后模型仍会自动生成标准解释结构"
+      },
+      "priv_absent": {
+        "dimension": "HOW_MUCH",
+        "rationale": "决策：WHO受众偏泛；'1.5小时视频/30页文档/三部分结构'是量化输出规格，private强度更高",
+        "leakage_keywords": ["1.5小时", "30页", "三个部分", "视频教程", "技术文档"]
+      },
+      "micro_clean_required": false,
+      "micro_clean_notes": "",
+      "case_study_role": "public_compensation_primary",
+      "audit_status": "pending"
+    }
+  ]
+}
